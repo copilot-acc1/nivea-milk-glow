@@ -25,15 +25,15 @@ const Navigation = () => {
         isScrolled ? "bg-white/80 backdrop-blur-md shadow-lg" : "bg-white/60 backdrop-blur-sm"
       }`}
     >
-      <div className="px-8 py-3">
-        <div className="flex items-center justify-between gap-6">
+      <div className="px-16 py-4">
+        <div className="flex items-center justify-between gap-12">
           <div className="flex items-center gap-2">
             <div className="text-black font-bold text-2xl font-anton">
               NIVEA
             </div>
           </div>
 
-          <div className="hidden md:flex items-center gap-6">
+          <div className="hidden md:flex items-center gap-8">
             <button
               onClick={() => scrollToSection("home")}
               className="text-black hover:text-primary transition-smooth text-sm font-anton"
