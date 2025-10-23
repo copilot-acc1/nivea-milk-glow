@@ -8,51 +8,51 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* NIVEA Brand Colors */
-    --nivea-blue: 225 63% 26%;
-    --nivea-light-blue: 200 100% 85%;
-    --nivea-sky-blue: 195 100% 95%;
+    /* Soft Gradient Theme - Inspired by dreamy blue skies */
+    --cyan-light: 185 100% 90%;
+    --blue-soft: 200 100% 88%;
+    --blue-pale: 210 100% 92%;
     
     /* Design System */
-    --background: 0 0% 100%;
-    --foreground: 225 63% 26%;
+    --background: 200 100% 96%;
+    --foreground: 210 40% 30%;
 
     --card: 0 0% 100%;
-    --card-foreground: 225 63% 26%;
+    --card-foreground: 210 40% 30%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 225 63% 26%;
+    --popover-foreground: 210 40% 30%;
 
-    --primary: 225 63% 26%;
+    --primary: 200 80% 60%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 200 100% 85%;
-    --secondary-foreground: 225 63% 26%;
+    --secondary: 185 100% 85%;
+    --secondary-foreground: 210 40% 30%;
 
-    --muted: 195 100% 95%;
-    --muted-foreground: 225 40% 50%;
+    --muted: 200 100% 94%;
+    --muted-foreground: 210 30% 50%;
 
-    --accent: 200 100% 85%;
-    --accent-foreground: 225 63% 26%;
+    --accent: 185 100% 88%;
+    --accent-foreground: 210 40% 30%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 200 50% 90%;
-    --input: 200 50% 90%;
-    --ring: 225 63% 26%;
+    --border: 200 60% 85%;
+    --input: 200 60% 90%;
+    --ring: 200 80% 60%;
 
     --radius: 1rem;
 
-    /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(195 100% 95%) 0%, hsl(200 100% 85%) 100%);
-    --gradient-section: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(195 100% 98%) 100%);
-    --gradient-card: linear-gradient(135deg, hsl(0 0% 100%) 0%, hsl(195 100% 97%) 100%);
+    /* Gradients - Soft dreamy blue aesthetic */
+    --gradient-hero: linear-gradient(135deg, hsl(185 100% 90%) 0%, hsl(200 100% 88%) 50%, hsl(210 100% 92%) 100%);
+    --gradient-section: linear-gradient(180deg, hsl(200 100% 96%) 0%, hsl(185 100% 94%) 100%);
+    --gradient-card: linear-gradient(135deg, hsl(0 0% 100%) 0%, hsl(200 100% 95%) 100%);
     
-    /* Shadows */
-    --shadow-soft: 0 4px 24px -2px hsl(225 63% 26% / 0.08);
-    --shadow-medium: 0 8px 32px -4px hsl(225 63% 26% / 0.12);
-    --shadow-strong: 0 12px 48px -6px hsl(225 63% 26% / 0.18);
+    /* Shadows - Lighter for soft aesthetic */
+    --shadow-soft: 0 4px 24px -2px hsl(200 60% 60% / 0.08);
+    --shadow-medium: 0 8px 32px -4px hsl(200 60% 60% / 0.12);
+    --shadow-strong: 0 12px 48px -6px hsl(200 60% 60% / 0.18);
     
     /* Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -134,8 +134,8 @@ All colors MUST be HSL.
   }
   
   .droplet-pattern {
-    background-image: radial-gradient(circle at 20% 30%, hsl(200 100% 85% / 0.3) 0%, transparent 50%),
-                      radial-gradient(circle at 80% 70%, hsl(200 100% 85% / 0.2) 0%, transparent 50%),
-                      radial-gradient(circle at 40% 80%, hsl(200 100% 85% / 0.25) 0%, transparent 50%);
+    background-image: radial-gradient(circle at 20% 30%, hsl(185 100% 90% / 0.4) 0%, transparent 50%),
+                      radial-gradient(circle at 80% 70%, hsl(200 100% 88% / 0.3) 0%, transparent 50%),
+                      radial-gradient(circle at 40% 80%, hsl(210 100% 92% / 0.35) 0%, transparent 50%);
   }
 }
