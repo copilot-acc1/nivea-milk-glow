@@ -21,59 +21,59 @@ const Navigation = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-smooth ${
-        isScrolled ? "bg-primary shadow-medium" : "bg-primary/95"
+      className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 transition-smooth rounded-full ${
+        isScrolled ? "bg-white/80 backdrop-blur-md shadow-lg" : "bg-white/60 backdrop-blur-sm"
       }`}
     >
-      <div className="container mx-auto px-6">
-        <div className="flex items-center justify-between h-16">
+      <div className="px-8 py-3">
+        <div className="flex items-center justify-between gap-6">
           <div className="flex items-center gap-2">
-            <div className="text-primary-foreground font-bold text-2xl font-playfair">
+            <div className="text-black font-bold text-2xl font-anton">
               NIVEA
             </div>
           </div>
 
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-6">
             <button
               onClick={() => scrollToSection("home")}
-              className="text-primary-foreground hover:text-secondary transition-smooth text-sm font-medium"
+              className="text-black hover:text-primary transition-smooth text-sm font-anton"
             >
               Home
             </button>
             <button
               onClick={() => scrollToSection("how-it-works")}
-              className="text-primary-foreground hover:text-secondary transition-smooth text-sm font-medium"
+              className="text-black hover:text-primary transition-smooth text-sm font-anton"
             >
               How It Works
             </button>
             <button
               onClick={() => scrollToSection("features")}
-              className="text-primary-foreground hover:text-secondary transition-smooth text-sm font-medium"
+              className="text-black hover:text-primary transition-smooth text-sm font-anton"
             >
               Features
             </button>
             <button
               onClick={() => scrollToSection("ingredients")}
-              className="text-primary-foreground hover:text-secondary transition-smooth text-sm font-medium"
+              className="text-black hover:text-primary transition-smooth text-sm font-anton"
             >
               Ingredients
             </button>
             <button
               onClick={() => scrollToSection("testimonials")}
-              className="text-primary-foreground hover:text-secondary transition-smooth text-sm font-medium"
+              className="text-black hover:text-primary transition-smooth text-sm font-anton"
             >
               Testimonials
             </button>
             <button
               onClick={() => scrollToSection("faq")}
-              className="text-primary-foreground hover:text-secondary transition-smooth text-sm font-medium"
+              className="text-black hover:text-primary transition-smooth text-sm font-anton"
             >
               FAQs
             </button>
             <Button
-              onClick={() => scrollToSection("buy")}
+              onClick={() => scrollToSection("pricing")}
               variant="secondary"
-              className="font-semibold"
+              className="font-anton"
             >
               Buy Now
             </Button>
