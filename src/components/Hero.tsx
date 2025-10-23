@@ -17,10 +17,7 @@ const Hero = () => {
       {/* Content */}
       <div className="container mx-auto px-6 py-20 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Left space for future image/element */}
-          <div className="hidden lg:block"></div>
-          
-          {/* Right content */}
+          {/* Left content */}
           <div className="flex flex-col items-start text-left space-y-8 animate-fade-up">
             <h1 className="text-5xl md:text-7xl font-anton text-foreground leading-tight">
               For a Natural,
@@ -42,6 +39,17 @@ const Hero = () => {
             >
               Explore Now
             </Button>
+          </div>
+          
+          {/* Right side - Spline 3D element */}
+          <div className="hidden lg:block h-[600px] relative">
+            <iframe 
+              src='https://my.spline.design/balloonintheskyremix-UIwwNEV19UAtTwUPBiDdpJ10/' 
+              frameBorder='0' 
+              width='100%' 
+              height='100%'
+              className="rounded-lg"
+            />
           </div>
         </div>
       </div>
