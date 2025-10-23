@@ -16,27 +16,33 @@ const Hero = () => {
 
       {/* Content */}
       <div className="container mx-auto px-6 py-20 relative z-10">
-        <div className="flex flex-col items-center justify-center text-center space-y-8 animate-fade-up">
-          <h1 className="text-5xl md:text-7xl font-anton text-foreground leading-tight">
-            For a Natural,
-            <br />
-            Healthy Glow.
-          </h1>
-          <p className="text-3xl md:text-4xl font-playfair italic text-foreground">
-            Don't Face Wash,{" "}
-            <span className="font-bold">Milk Wash.</span>
-          </p>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl">
-            Discover NIVEA Milk Delights — the gentle, pH-balanced way to
-            cleanse and glow.
-          </p>
-          <Button
-            size="lg"
-            onClick={() => scrollToSection("features")}
-            className="text-lg px-8 py-6 bg-white/20 backdrop-blur-md border border-white/30 text-foreground hover:bg-white/30 shadow-lg hover:shadow-xl transition-smooth hover:scale-105"
-          >
-            Explore Now
-          </Button>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* Left space for future image/element */}
+          <div className="hidden lg:block"></div>
+          
+          {/* Right content */}
+          <div className="flex flex-col items-start text-left space-y-8 animate-fade-up">
+            <h1 className="text-5xl md:text-7xl font-anton text-foreground leading-tight">
+              For a Natural,
+              <br />
+              Healthy Glow.
+            </h1>
+            <p className="text-3xl md:text-4xl font-playfair italic text-foreground">
+              Don't Face Wash,{" "}
+              <span className="font-bold">Milk Wash.</span>
+            </p>
+            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl">
+              Discover NIVEA Milk Delights — the gentle, pH-balanced way to
+              cleanse and glow.
+            </p>
+            <Button
+              size="lg"
+              onClick={() => scrollToSection("features")}
+              className="text-lg px-8 py-6 bg-white/20 backdrop-blur-md border border-white/30 text-foreground hover:bg-white/30 shadow-lg hover:shadow-xl transition-smooth hover:scale-105"
+            >
+              Explore Now
+            </Button>
+          </div>
         </div>
       </div>
 
