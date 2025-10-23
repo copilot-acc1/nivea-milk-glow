@@ -126,6 +126,7 @@ export default {
       fontFamily: {
         playfair: ['Playfair Display', 'serif'],
         sans: ['DM Sans', 'sans-serif'],
+        anton: ['Anton', 'sans-serif'],
       },
     },
   },
