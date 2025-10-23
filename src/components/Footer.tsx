@@ -1,8 +1,6 @@
 import { Facebook, Instagram, Twitter, Youtube } from "lucide-react";
-
 const Footer = () => {
-  return (
-    <footer className="bg-primary text-primary-foreground py-16">
+  return <footer className="bg-primary text-primary-foreground py-16">
       <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-4 gap-12 mb-12">
           <div>
@@ -65,35 +63,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div>
-            <h4 className="font-semibold mb-4">Follow Us</h4>
-            <div className="flex gap-4">
-              <a
-                href="#"
-                className="w-10 h-10 bg-primary-foreground/10 hover:bg-secondary rounded-full flex items-center justify-center transition-smooth hover:scale-110"
-              >
-                <Facebook className="w-5 h-5" />
-              </a>
-              <a
-                href="#"
-                className="w-10 h-10 bg-primary-foreground/10 hover:bg-secondary rounded-full flex items-center justify-center transition-smooth hover:scale-110"
-              >
-                <Instagram className="w-5 h-5" />
-              </a>
-              <a
-                href="#"
-                className="w-10 h-10 bg-primary-foreground/10 hover:bg-secondary rounded-full flex items-center justify-center transition-smooth hover:scale-110"
-              >
-                <Twitter className="w-5 h-5" />
-              </a>
-              <a
-                href="#"
-                className="w-10 h-10 bg-primary-foreground/10 hover:bg-secondary rounded-full flex items-center justify-center transition-smooth hover:scale-110"
-              >
-                <Youtube className="w-5 h-5" />
-              </a>
-            </div>
-          </div>
+          
         </div>
 
         <div className="border-t border-primary-foreground/20 pt-8">
@@ -113,8 +83,6 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
