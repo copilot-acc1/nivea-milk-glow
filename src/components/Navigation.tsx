@@ -27,13 +27,18 @@ const Navigation = () => {
         ${isScrolled ? "bg-white/20 backdrop-blur-xl border border-white/30 shadow-2xl" : "bg-white/10 backdrop-blur-xl border border-white/30"}`}
     >
       <div className="py-[12px] px-[24px] mx-[24px] my-0">
-        {/* Use the same horizontal gap everywhere (gap-6 = 24px) so text items and the button have consistent spacing */}
-        <div className="flex items-center justify-between gap-6">
-          {/* spacer where the logo used to be (keeps layout centered) */}
+        {/* 
+          Layout notes:
+          - removed logo element but kept symmetric edge spacers (w-6) on left and right so the visual offset remains.
+          - increased the horizontal gap between items by 4px (gap-7 = 28px) so each text/button pair has 4px more space than gap-6.
+          - outer flex children are: left spacer, nav group, buy button, right spacer — gap-7 applies between these so the space between the nav group and Buy Now is increased as well.
+        */}
+        <div className="flex items-center justify-between gap-7">
+          {/* left spacer preserving the previous left empty area (w-6 = 24px) */}
           <div className="w-6" />
 
           {/* Only the requested nav items (visible on md+) */}
-          <div className="hidden md:flex items-center gap-6 text-white">
+          <div className="hidden md:flex items-center gap-7 text-white">
             <button
               onClick={() => scrollToSection("ingredients")}
               className="text-white hover:text-primary transition-smooth text-sm"
@@ -54,7 +59,7 @@ const Navigation = () => {
             </button>
           </div>
 
-          {/* Buy Now stays at the right exactly as before */}
+          {/* Buy Now stays at the right. gap-7 ensures the space between the last nav item and the button is increased by 4px */}
           <div className="flex items-center">
             <Button
               onClick={() => scrollToSection("pricing")}
@@ -63,6 +68,9 @@ const Navigation = () => {
               Buy Now
             </Button>
           </div>
+
+          {/* right spacer to mirror left spacer so left of Ingredients == right of Buy Now */}
+          <div className="w-6" />
         </div>
       </div>
     </nav>
