@@ -17,7 +17,7 @@ const Hero = () => {
       <div className="absolute top-4 right-4 z-30 pointer-events-auto">
         {/* Place the uploaded/attached image in the public folder as /Nivea_Logo.png */}
         <img
-          src="/src/assets/Nivea_Logo.png"
+          src="/Nivea_Logo.png"
           alt="NIVEA logo"
           className="w-12 h-auto"
           style={{ display: "block" }}
