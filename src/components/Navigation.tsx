@@ -35,19 +35,19 @@ const Navigation = () => {
           <div className="hidden md:flex items-center gap-8 text-white">
             <button
               onClick={() => scrollToSection("ingredients")}
-              className="text-white hover:text-primary transition-smooth text-sm font-anton"
+              className="text-white hover:text-primary transition-smooth text-sm"
             >
               Ingredients
             </button>
             <button
               onClick={() => scrollToSection("testimonials")}
-              className="text-white hover:text-primary transition-smooth text-sm font-anton"
+              className="text-white hover:text-primary transition-smooth text-sm"
             >
               Testimonials
             </button>
             <button
               onClick={() => scrollToSection("faq")}
-              className="text-white hover:text-primary transition-smooth text-sm font-anton"
+              className="text-white hover:text-primary transition-smooth text-sm"
             >
               FAQs
             </button>
@@ -58,7 +58,6 @@ const Navigation = () => {
             <Button
               onClick={() => scrollToSection("pricing")}
               variant="secondary"
-              className="font-anton"
             >
               Buy Now
             </Button>
