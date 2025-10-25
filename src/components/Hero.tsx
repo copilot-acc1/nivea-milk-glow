@@ -13,15 +13,20 @@ const Hero = () => {
       id="home"
       className="min-h-screen pt-16 relative overflow-hidden flex items-center justify-center"
     >
-      {/* Top-right logo (replaced with attached Nivea_Logo.png) */}
-      <div className="absolute top-4 right-4 z-30 pointer-events-auto">
+      {/* Top-left logo + name (replaced with attached Nivea_Logo.png) */}
+      <div className="absolute top-4 left-4 z-30 pointer-events-auto">
         {/* Place the uploaded/attached image in the public folder as /Nivea_Logo.png */}
-        <img
-          src="/Nivea_Logo.png"
-          alt="NIVEA logo"
-          className="w-12 h-auto"
-          style={{ display: "block" }}
-        />
+        <div className="flex items-center space-x-3">
+          <img
+            src="/Nivea_Logo.png"
+            alt="NIVEA logo"
+            className="w-12 h-auto"
+            style={{ display: "block" }}
+          />
+          <span className="text-white font-semibold tracking-widest text-lg select-none">
+            NIVEA
+          </span>
+        </div>
       </div>
 
       {/* Spline Background */}
