@@ -18,6 +18,12 @@ const Hero = () => {
         <spline-viewer url="https://prod.spline.design/GkZ7uisnFxBEvXpf/scene.splinecode"></spline-viewer>
       </div>
 
+      {/* Black overlay to hide the "Built with Spline" badge (bottom-right) */}
+      <div
+        className="absolute bottom-4 right-4 w-36 h-12 bg-black rounded-lg z-20 pointer-events-none"
+        aria-hidden="true"
+      />
+
       {/* Content */}
       <div className="container mx-auto px-6 py-20 relative z-10">
         <div className="flex flex-col items-center text-center space-y-8 animate-fade-up max-w-4xl mx-auto">
