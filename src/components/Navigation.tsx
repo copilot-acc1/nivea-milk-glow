@@ -27,12 +27,13 @@ const Navigation = () => {
         ${isScrolled ? "bg-white/20 backdrop-blur-xl border border-white/30 shadow-2xl" : "bg-white/10 backdrop-blur-xl border border-white/30"}`}
     >
       <div className="py-[12px] px-[24px] mx-[24px] my-0">
-        <div className="flex items-center justify-between gap-12">
+        {/* Use the same horizontal gap everywhere (gap-6 = 24px) so text items and the button have consistent spacing */}
+        <div className="flex items-center justify-between gap-6">
           {/* spacer where the logo used to be (keeps layout centered) */}
           <div className="w-6" />
 
           {/* Only the requested nav items (visible on md+) */}
-          <div className="hidden md:flex items-center gap-8 text-white">
+          <div className="hidden md:flex items-center gap-6 text-white">
             <button
               onClick={() => scrollToSection("ingredients")}
               className="text-white hover:text-primary transition-smooth text-sm"
