@@ -13,6 +13,35 @@ const Hero = () => {
       id="home"
       className="min-h-screen pt-16 relative overflow-hidden flex items-center justify-center"
     >
+      {/* Top-left logo + text */}
+      <div className="absolute top-4 left-4 z-30">
+        <a
+          href="https://commons.wikimedia.org/wiki/File:Nivea_Logo.png"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center space-x-[4px] pointer-events-auto"
+        >
+          {/* Direct image link to the Commons file (serves the logo). */}
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Nivea_Logo.png"
+            alt="NIVEA logo"
+            className="w-12 h-auto"
+            style={{ display: "block" }}
+          />
+          {/* Use a system sans-serif that closely matches the clean sans used in the logo.
+              4px gap is provided by space-x-[4px]. */}
+          <span
+            className="text-white text-lg font-bold uppercase"
+            style={{
+              fontFamily: "Helvetica, Arial, sans-serif",
+              letterSpacing: "-0.5px",
+            }}
+          >
+            NIVEA
+          </span>
+        </a>
+      </div>
+
       {/* Spline Background */}
       <div className="absolute inset-0 w-full h-full">
         <spline-viewer url="https://prod.spline.design/GkZ7uisnFxBEvXpf/scene.splinecode"></spline-viewer>
