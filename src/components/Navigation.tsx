@@ -29,12 +29,22 @@ const Navigation = () => {
           <div className="hidden md:flex items-center gap-8">
             <button onClick={() => scrollToSection("home")} className="text-black hover:text-primary transition-smooth text-sm font-anton">
               Home
-            </button
+            </button>
+            <button onClick={() => scrollToSection("how-it-works")} className="text-black hover:text-primary transition-smooth text-sm font-anton">
+              How It Works
+            </button>
             <button onClick={() => scrollToSection("features")} className="text-black hover:text-primary transition-smooth text-sm font-anton">
               Features
             </button>
             <button onClick={() => scrollToSection("ingredients")} className="text-black hover:text-primary transition-smooth text-sm font-anton">
               Ingredients
+            </button>
+            <button onClick={() => scrollToSection("testimonials")} className="text-black hover:text-primary transition-smooth text-sm font-anton">
+              Testimonials
+            </button>
+            <button onClick={() => scrollToSection("faq")} className="text-black hover:text-primary transition-smooth text-sm font-anton">
+              FAQs
+            </button>
             <Button onClick={() => scrollToSection("pricing")} variant="secondary" className="font-anton">
               Buy Now
             </Button>
