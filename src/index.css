@@ -2,145 +2,215 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
+/* Design system + dark hero background (HSL values only).
+   Updated to:
+   - Use valid HSL color values (hsl(...) / hsl(... / alpha))
+   - Create a layered gradient background that evokes the bluish glow in Ref.jpg (no image)
+   - Force all text to pure white for maximum contrast
 */
 
 @layer base {
   :root {
-    /* Dark Modern Theme - Inspired by reference */
-    --cyan-glow: 190 100% 50%;
-    --cyan-bright: 185 95% 65%;
-    --dark-navy: 220 30% 8%;
-    
-    /* Design System */
-    --background: 220 30% 8%;
-    --foreground: 190 20% 95%;
+    /* Cyan / accent */
+    --cyan-glow: hsl(190 100% 50%);
+    --cyan-bright: hsl(185 95% 65%);
 
-    --card: 220 25% 12%;
-    --card-foreground: 190 20% 95%;
+    /* Dark base */
+    --dark-navy: hsl(220 30% 8%);
 
-    --popover: 220 25% 12%;
-    --popover-foreground: 190 20% 95%;
+    /* Core tokens (all HSL) */
+    --background: hsl(220 30% 8%);
+    --foreground: hsl(0 0% 100%);
 
-    --primary: 190 100% 50%;
-    --primary-foreground: 220 30% 8%;
+    --card: hsl(220 25% 12%);
+    --card-foreground: hsl(0 0% 100%);
 
-    --secondary: 220 25% 15%;
-    --secondary-foreground: 190 20% 95%;
+    --popover: hsl(220 25% 12%);
+    --popover-foreground: hsl(0 0% 100%);
 
-    --muted: 220 25% 15%;
-    --muted-foreground: 190 15% 65%;
+    --primary: hsl(190 100% 50%);
+    --primary-foreground: hsl(220 30% 8%);
 
-    --accent: 185 95% 65%;
-    --accent-foreground: 220 30% 8%;
+    --secondary: hsl(220 25% 15%);
+    --secondary-foreground: hsl(0 0% 100%);
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 100%;
+    --muted: hsl(220 25% 15%);
+    --muted-foreground: hsl(190 15% 65%);
 
-    --border: 220 25% 20%;
-    --input: 220 25% 18%;
-    --ring: 190 100% 50%;
+    --accent: hsl(185 95% 65%);
+    --accent-foreground: hsl(220 30% 8%);
+
+    --destructive: hsl(0 84.2% 60.2%);
+    --destructive-foreground: hsl(0 0% 100%);
+
+    --border: hsl(220 25% 20%);
+    --input: hsl(220 25% 18%);
+    --ring: hsl(190 100% 50%);
 
     --radius: 1rem;
 
-    /* Gradients - Dark with cyan accents */
-    --gradient-hero: linear-gradient(135deg, hsl(220 30% 8%) 0%, hsl(220 35% 12%) 50%, hsl(220 30% 10%) 100%);
+    /* Gradients - keep HSL inside definitions */
+    --gradient-hero: linear-gradient(
+      135deg,
+      hsl(220 30% 8%) 0%,
+      hsl(220 35% 12%) 50%,
+      hsl(220 30% 10%) 100%
+    );
     --gradient-section: linear-gradient(180deg, hsl(220 30% 8%) 0%, hsl(220 28% 10%) 100%);
     --gradient-card: linear-gradient(135deg, hsl(220 25% 12%) 0%, hsl(220 28% 14%) 100%);
-    
-    /* Shadows - Cyan glow effect */
+
+    /* Shadows - cyan glow effect (using modern color/alpha syntax) */
     --shadow-soft: 0 4px 24px -2px hsl(190 100% 50% / 0.15);
     --shadow-medium: 0 8px 32px -4px hsl(190 100% 50% / 0.25);
     --shadow-strong: 0 12px 48px -6px hsl(190 100% 50% / 0.35);
-    --shadow-cyan-glow: 0 0 40px hsl(190 100% 50% / 0.4);
-    
-    /* Animations */
+    --shadow-cyan-glow: 0 0 40px hsl(190 100% 50% / 0.40);
+
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
+  /* Dark-mode overrides (still HSL) */
   .dark {
-    --background: 225 63% 26%;
-    --foreground: 0 0% 100%;
+    --background: hsl(225 63% 6%); /* deeper dark in .dark mode */
+    --foreground: hsl(0 0% 100%);
 
-    --card: 225 50% 30%;
-    --card-foreground: 0 0% 100%;
+    --card: hsl(225 50% 12%);
+    --card-foreground: hsl(0 0% 100%);
 
-    --popover: 225 50% 30%;
-    --popover-foreground: 0 0% 100%;
+    --popover: hsl(225 50% 12%);
+    --popover-foreground: hsl(0 0% 100%);
 
-    --primary: 0 0% 100%;
-    --primary-foreground: 225 63% 26%;
+    --primary: hsl(0 0% 100%);
+    --primary-foreground: hsl(225 63% 6%);
 
-    --secondary: 200 100% 85%;
-    --secondary-foreground: 225 63% 26%;
+    --secondary: hsl(200 100% 85%);
+    --secondary-foreground: hsl(225 63% 6%);
 
-    --muted: 225 40% 20%;
-    --muted-foreground: 200 100% 85%;
+    --muted: hsl(225 40% 10%);
+    --muted-foreground: hsl(200 100% 85%);
 
-    --accent: 200 100% 85%;
-    --accent-foreground: 225 63% 26%;
+    --accent: hsl(200 100% 85%);
+    --accent-foreground: hsl(225 63% 6%);
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive: hsl(0 62.8% 30.6%);
+    --destructive-foreground: hsl(0 0% 100%);
 
-    --border: 225 40% 35%;
-    --input: 225 40% 35%;
-    --ring: 200 100% 85%;
+    --border: hsl(225 40% 35%);
+    --input: hsl(225 40% 35%);
+    --ring: hsl(200 100% 85%);
   }
 }
 
+/* Second base block: apply global layout + background and force white text */
 @layer base {
+  /* Keep Tailwind's border token available */
   * {
     @apply border-border;
   }
 
-  body {
-    @apply bg-background text-foreground;
-    font-family: 'DM Sans', sans-serif;
+  /* Page base: layered gradients that emulate the cyan-lit arcs from Ref.jpg
+     - No images used
+     - Uses multiple radial gradients to create large soft cyan arcs with falloff
+  */
+  html, body, #__next, #root {
+    height: 100%;
   }
-  
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'DM Sans', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    color: var(--foreground);
+    background-color: var(--background);
+
+    /* Layered background: dark base + 2 large cyan arcs + subtle noise/gradient */
+    background-image:
+      radial-gradient(1000px 420px at 80% 12%, hsl(185 95% 65% / 0.22) 0%, rgba(0,0,0,0) 30%),
+      radial-gradient(1100px 520px at 18% 78%, hsl(190 100% 50% / 0.18) 0%, rgba(0,0,0,0) 28%),
+      radial-gradient(700px 300px at 50% 50%, hsl(190 100% 50% / 0.10) 0%, rgba(0,0,0,0) 40%),
+      linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.45) 40%, rgba(0,0,0,0.9) 100%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-blend-mode: screen, screen, screen, normal;
+  }
+
+  /* Force all text to white across the app. Uses !important to override inline styles/components that set dark text. */
+  *,
+  *::before,
+  *::after {
+    color: var(--foreground) !important;
+  }
+
+  a, button, input, textarea, select {
+    color: var(--foreground) !important;
+  }
+
+  ::placeholder {
+    color: hsl(0 0% 100% / 0.8) !important;
+  }
+
+  /* Make semantic headings use display serif */
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Playfair Display', serif;
+    color: var(--foreground) !important;
   }
 }
 
+/* Utilities & components */
 @layer utilities {
   .gradient-hero {
     background: var(--gradient-hero);
   }
-  
+
   .gradient-section {
     background: var(--gradient-section);
   }
-  
+
   .gradient-card {
     background: var(--gradient-card);
   }
-  
+
   .shadow-soft {
     box-shadow: var(--shadow-soft);
   }
-  
+
   .shadow-medium {
     box-shadow: var(--shadow-medium);
   }
-  
+
   .shadow-strong {
     box-shadow: var(--shadow-strong);
   }
-  
+
+  .cyan-glow {
+    box-shadow: var(--shadow-cyan-glow);
+  }
+
   .transition-smooth {
     transition: var(--transition-smooth);
   }
-  
+
   .droplet-pattern {
-    background-image: radial-gradient(circle at 20% 30%, hsl(190 100% 50% / 0.15) 0%, transparent 50%),
-                      radial-gradient(circle at 80% 70%, hsl(185 95% 65% / 0.12) 0%, transparent 50%),
-                      radial-gradient(circle at 40% 80%, hsl(190 100% 50% / 0.18) 0%, transparent 50%);
+    /* soft, sparse radial highlights */
+    background-image:
+      radial-gradient(circle at 20% 30%, hsl(190 100% 50% / 0.14) 0%, transparent 40%),
+      radial-gradient(circle at 80% 70%, hsl(185 95% 65% / 0.10) 0%, transparent 40%),
+      radial-gradient(circle at 40% 80%, hsl(190 100% 50% / 0.12) 0%, transparent 40%);
+    background-blend-mode: screen;
   }
-  
-  .cyan-glow {
-    box-shadow: var(--shadow-cyan-glow);
+
+  /* Surfaces to preserve readability on top of the hero background */
+  .surface, .card, .panel {
+    background: hsl(225 20% 8% / 0.45);
+    color: var(--foreground) !important;
+    border-radius: var(--radius);
+    padding: 12px;
+    backdrop-filter: blur(6px);
+  }
+
+  /* Opt-out if there's a part that must keep its original colors */
+  .preserve-colors * {
+    color: initial !important;
+    background: initial !important;
   }
 }
