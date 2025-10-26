@@ -14,7 +14,7 @@ const Hero = () => {
       className="min-h-screen pt-16 relative overflow-hidden flex items-center justify-center"
     >
       {/* Top-right logo + name (uses same Playfair styling as footer) */}
-      <div className="absolute top-4 left-4 z-30 pointer-events-auto">
+      <div className="absolute top-4 left-14 z-30 pointer-events-auto">
         {/* Place the uploaded/attached image in the public folder as /Nivea_Logo.png */}
         <div className="flex items-center space-x-4">
           <img
