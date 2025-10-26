@@ -11,7 +11,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="min-h-screen pt-16 relative overflow-hidden flex items-center justify-center"
+      className="min-h-screen pt-16 relative overflow-hidden flex flex-col md: flex-row items-center justify-center"
     >
       {/* Top-right logo + name (uses same Playfair styling as footer) */}
       <div className="absolute top-4 left-14 z-30 pointer-events-auto">
