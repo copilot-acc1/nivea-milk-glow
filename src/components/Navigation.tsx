@@ -28,15 +28,16 @@ const Navigation = () => {
           ? "bg-white/20 backdrop-blur-xl border border-white/30 shadow-2xl"
           : "bg-white/10 backdrop-blur-xl border border-white/30"
         }
-        /* position tweaks */
+        /* Position settings */
         md:top-4 md:left-1/2 md:-translate-x-1/2
-        top-8 right-4  /* mobile: slightly lower + shifted right */
+        top-8 right-4
       `}
     >
-      <div className="py-3 px-6 md:px-8 mx-6">
+      {/* ↓↓↓ Adjusted responsive padding ↓↓↓ */}
+      <div className="py-3 px-5 sm:px-6 md:px-6 lg:px-7 xl:px-8 mx-2 md:mx-4">
         <div className="flex items-center justify-between">
           {/* Left spacer for symmetry */}
-          <div className="w-6" />
+          <div className="w-4 md:w-6" />
 
           {/* Desktop Nav Links */}
           <div className="hidden md:flex items-center gap-8 text-white font-medium">
@@ -83,7 +84,7 @@ const Navigation = () => {
           </div>
 
           {/* Right spacer */}
-          <div className="w-6" />
+          <div className="w-4 md:w-6" />
         </div>
 
         {/* Mobile Dropdown Menu */}
