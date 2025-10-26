@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react"; // icon for hamburger and close
+import { Menu, X } from "lucide-react";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -16,22 +16,26 @@ const Navigation = () => {
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
-      setMenuOpen(false); // close menu after click on mobile
+      setMenuOpen(false);
     }
   };
 
   return (
     <nav
-      className={`fixed top-4 right-4 -translate-x-1/2 z-50 transition-all duration-300 rounded-full
+      className={`
+        fixed z-50 transition-all duration-300 rounded-full
         ${isScrolled
           ? "bg-white/20 backdrop-blur-xl border border-white/30 shadow-2xl"
           : "bg-white/10 backdrop-blur-xl border border-white/30"
-        }`}
+        }
+        /* position tweaks */
+        md:top-4 md:left-1/2 md:-translate-x-1/2
+        top-8 right-4  /* mobile: slightly lower + shifted right */
+      `}
     >
       <div className="py-3 px-6 md:px-8 mx-6">
-        {/* Outer Container */}
         <div className="flex items-center justify-between">
-          {/* Brand (optional placeholder for symmetry) */}
+          {/* Left spacer for symmetry */}
           <div className="w-6" />
 
           {/* Desktop Nav Links */}
