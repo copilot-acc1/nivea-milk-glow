@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
+import { Menu, X } from "lucide-react"; // icon for hamburger and close
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -15,63 +15,103 @@ const Navigation = () => {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({
-        behavior: "smooth"
-      });
+      element.scrollIntoView({ behavior: "smooth" });
+      setMenuOpen(false); // close menu after click on mobile
     }
   };
 
   return (
     <nav
-      className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 transition-smooth rounded-full
-        ${isScrolled ? "bg-white/20 backdrop-blur-xl border border-white/30 shadow-2xl" : "bg-white/10 backdrop-blur-xl border border-white/30"}`}
+      className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 transition-all duration-300 rounded-full
+        ${isScrolled
+          ? "bg-white/20 backdrop-blur-xl border border-white/30 shadow-2xl"
+          : "bg-white/10 backdrop-blur-xl border border-white/30"
+        }`}
     >
-      <div className="py-[12px] px-[24px] mx-[24px] my-0">
-        {/* 
-          Layout notes:
-          - removed logo element but kept symmetric edge spacers (w-6) on left and right so the visual offset remains.
-          - increased the horizontal gap between items by 4px (gap-7 = 28px) so each text/button pair has 4px more space than gap-6.
-          - outer flex children are: left spacer, nav group, buy button, right spacer — gap-7 applies between these so the space between the nav group and Buy Now is increased as well.
-        */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-7">
-          {/* left spacer preserving the previous left empty area (w-6 = 24px) */}
-          <div className="w-4" />
+      <div className="py-3 px-6 md:px-8 mx-6">
+        {/* Outer Container */}
+        <div className="flex items-center justify-between">
+          {/* Brand (optional placeholder for symmetry) */}
+          <div className="w-6" />
 
-          {/* Only the requested nav items (visible on md+) */}
-          <div className="hidden md:flex items-center gap-7 text-white">
+          {/* Desktop Nav Links */}
+          <div className="hidden md:flex items-center gap-8 text-white font-medium">
             <button
               onClick={() => scrollToSection("ingredients")}
-              className="text-white hover:text-primary transition-smooth text-sm"
+              className="hover:text-primary transition-all duration-200 text-sm"
             >
               Ingredients
             </button>
             <button
               onClick={() => scrollToSection("testimonials")}
-              className="text-white hover:text-primary transition-smooth text-sm"
+              className="hover:text-primary transition-all duration-200 text-sm"
             >
               Testimonials
             </button>
             <button
               onClick={() => scrollToSection("faq")}
-              className="text-white hover:text-primary transition-smooth text-sm"
+              className="hover:text-primary transition-all duration-200 text-sm"
             >
               FAQs
             </button>
           </div>
 
-          {/* Buy Now stays at the right. gap-7 ensures the space between the last nav item and the button is increased by 4px */}
-          <div className="flex flex-col md:flex-row items-center">
+          {/* Right side buttons */}
+          <div className="flex items-center gap-3">
+            {/* Desktop Buy Now */}
+            <div className="hidden md:block">
+              <Button
+                onClick={() => scrollToSection("pricing")}
+                variant="secondary"
+              >
+                Buy Now
+              </Button>
+            </div>
+
+            {/* Mobile menu toggle */}
+            <button
+              onClick={() => setMenuOpen(!menuOpen)}
+              className="md:hidden text-white hover:text-primary transition-all duration-200"
+              aria-label="Toggle Menu"
+            >
+              {menuOpen ? <X size={22} /> : <Menu size={22} />}
+            </button>
+          </div>
+
+          {/* Right spacer */}
+          <div className="w-6" />
+        </div>
+
+        {/* Mobile Dropdown Menu */}
+        {menuOpen && (
+          <div className="md:hidden mt-4 flex flex-col items-center gap-4 text-white font-medium animate-fade-in">
+            <button
+              onClick={() => scrollToSection("ingredients")}
+              className="hover:text-primary transition-all duration-200 text-base"
+            >
+              Ingredients
+            </button>
+            <button
+              onClick={() => scrollToSection("testimonials")}
+              className="hover:text-primary transition-all duration-200 text-base"
+            >
+              Testimonials
+            </button>
+            <button
+              onClick={() => scrollToSection("faq")}
+              className="hover:text-primary transition-all duration-200 text-base"
+            >
+              FAQs
+            </button>
             <Button
               onClick={() => scrollToSection("pricing")}
               variant="secondary"
+              className="w-32 mt-1"
             >
               Buy Now
             </Button>
           </div>
-
-          {/* right spacer to mirror left spacer so left of Ingredients == right of Buy Now */}
-          <div className="w-4" />
-        </div>
+        )}
       </div>
     </nav>
   );
