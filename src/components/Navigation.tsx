@@ -33,7 +33,7 @@ const Navigation = () => {
           - increased the horizontal gap between items by 4px (gap-7 = 28px) so each text/button pair has 4px more space than gap-6.
           - outer flex children are: left spacer, nav group, buy button, right spacer — gap-7 applies between these so the space between the nav group and Buy Now is increased as well.
         */}
-        <div className="flex flex-col md:flex-row items-center justify-between md:p-10 gap-7">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-7">
           {/* left spacer preserving the previous left empty area (w-6 = 24px) */}
           <div className="w-4" />
 
