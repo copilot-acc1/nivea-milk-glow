@@ -26,7 +26,7 @@ const Navigation = () => {
       className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 transition-smooth rounded-full
         ${isScrolled ? "bg-white/20 backdrop-blur-xl border border-white/30 shadow-2xl" : "bg-white/10 backdrop-blur-xl border border-white/30"}`}
     >
-      <div className="py-[12px] px-[12px] mx-[12px] my-0">
+      <div className="py-[12px] px-[24px] mx-[24px] my-0">
         {/* 
           Layout notes:
           - removed logo element but kept symmetric edge spacers (w-6) on left and right so the visual offset remains.
