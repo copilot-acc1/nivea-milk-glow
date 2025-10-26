@@ -13,17 +13,17 @@ const Hero = () => {
       id="home"
       className="min-h-screen pt-16 relative overflow-hidden flex items-center justify-center"
     >
-      {/* Top-left logo + name (replaced with attached Nivea_Logo.png) */}
-      <div className="absolute top-4 left-4 z-30 pointer-events-auto">
+      {/* Top-right logo + name (uses same Playfair styling as footer) */}
+      <div className="absolute top-4 right-4 z-30 pointer-events-auto">
         {/* Place the uploaded/attached image in the public folder as /Nivea_Logo.png */}
-        <div className="flex items-center space-x-3">
+        <div className="flex items-center space-x-4">
           <img
             src="/Nivea_Logo.png"
             alt="NIVEA logo"
-            className="w-12 h-auto"
+            className="w-14 md:w-16 h-auto"
             style={{ display: "block" }}
           />
-          <span className="text-white font-semibold tracking-widest text-lg select-none">
+          <span className="text-white font-playfair font-bold tracking-widest text-xl md:text-2xl select-none">
             NIVEA
           </span>
         </div>
