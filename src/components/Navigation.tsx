@@ -60,7 +60,7 @@ const Navigation = () => {
           </div>
 
           {/* Buy Now stays at the right. gap-7 ensures the space between the last nav item and the button is increased by 4px */}
-          <div className="flex items-center">
+          <div className="flex flex-col md:flex-row items-center">
             <Button
               onClick={() => scrollToSection("pricing")}
               variant="secondary"
